@@ -1,0 +1,238 @@
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Ubuntu', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.header {
+  background: #2e9ac1;
+  padding: 20px 0;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+/* Hero section */
+.hero {
+  padding: 40px 0;
+}
+
+.banner-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 auto 30px;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.banner-title {
+  font-size: clamp(24px, 5vw, 48px);
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  max-width: 800px;
+}
+
+/* CTA Button */
+.cta-button {
+  display: inline-block;
+  background: #c74c28;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 18px 40px;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.2s;
+  box-shadow: 0 4px 12px rgba(199, 76, 40, 0.3);
+}
+
+.cta-button:hover {
+  background: #b13e1f;
+}
+
+.cta-button-large {
+  font-size: 24px;
+  padding: 22px 50px;
+}
+
+#cta-button {
+  display: block;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Benefits section */
+.benefits {
+  padding: 60px 0;
+  background: #f8f9fa;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #2e9ac1;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.benefit-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.benefit-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.benefit-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #2e9ac1;
+}
+
+.benefit-card p {
+  font-size: 15px;
+  color: #666;
+}
+
+/* Trust section */
+.trust {
+  padding: 50px 0;
+  background: #fff;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+
+.trust-item {
+  padding: 20px;
+}
+
+.trust-badge {
+  font-size: 36px;
+  font-weight: 700;
+  color: #c74c28;
+  margin-bottom: 10px;
+}
+
+.trust-item p {
+  font-size: 14px;
+  color: #666;
+}
+
+.trust-item strong {
+  color: #333;
+  font-weight: 700;
+}
+
+/* Final CTA section */
+.cta-final {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #2e9ac1 0%, #1f7a93 100%);
+  text-align: center;
+}
+
+.cta-final h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .banner-wrapper {
+    width: 75%;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding: 20px 0;
+  }
+
+  .benefits {
+    padding: 40px 0;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .cta-final {
+    padding: 40px 0;
+  }
+
+  .cta-final h2 {
+    font-size: 24px;
+  }
+}
