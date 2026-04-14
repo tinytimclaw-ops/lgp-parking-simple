@@ -8,11 +8,16 @@
   // Get location parameter (could be 'location', 'airport', or similar)
   const location = urlParams.get('location') || urlParams.get('airport') || '';
 
-  // Update banner title if location is provided
+  // Update titles if location is provided
   if (location) {
+    const headerTitle = document.getElementById('header-title');
     const bannerTitle = document.getElementById('banner-title');
+
+    if (headerTitle) {
+      headerTitle.textContent = `${location} Airport Parking`;
+    }
     if (bannerTitle) {
-      bannerTitle.textContent = `Chop 70% on ${location} Airport Parking`;
+      bannerTitle.textContent = `Chop 70% off ${location} Airport Parking`;
     }
   }
 
