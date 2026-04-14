@@ -2,22 +2,47 @@
 (function() {
   'use strict';
 
+  // Airport code to name mapping
+  const AIRPORT_NAMES = {
+    LHR: 'Heathrow',
+    LGW: 'Gatwick',
+    MAN: 'Manchester',
+    STN: 'Stansted',
+    LTN: 'Luton',
+    BHX: 'Birmingham',
+    EDI: 'Edinburgh',
+    BRS: 'Bristol',
+    NCL: 'Newcastle',
+    LBA: 'Leeds Bradford',
+    EMA: 'East Midlands',
+    LPL: 'Liverpool',
+    GLA: 'Glasgow',
+    EXT: 'Exeter',
+    LCY: 'London City',
+    SEN: 'Southend',
+    ABZ: 'Aberdeen',
+    CWL: 'Cardiff'
+  };
+
   // Get all URL parameters
   const urlParams = new URLSearchParams(window.location.search);
 
   // Get location parameter (could be 'location', 'airport', or similar)
-  const location = urlParams.get('location') || urlParams.get('airport') || '';
+  const locationCode = urlParams.get('location') || urlParams.get('airport') || '';
 
   // Update titles if location is provided
-  if (location) {
+  if (locationCode) {
     const headerTitle = document.getElementById('header-title');
     const bannerTitle = document.getElementById('banner-title');
 
+    // Convert airport code to full name (or use as-is if not found)
+    const locationName = AIRPORT_NAMES[locationCode.toUpperCase()] || locationCode;
+
     if (headerTitle) {
-      headerTitle.textContent = `${location} Airport Parking`;
+      headerTitle.textContent = `${locationName} Airport Parking`;
     }
     if (bannerTitle) {
-      bannerTitle.textContent = `Chop 70% off ${location} Airport Parking`;
+      bannerTitle.textContent = `Chop 70% off ${locationName} Airport Parking`;
     }
   }
 
